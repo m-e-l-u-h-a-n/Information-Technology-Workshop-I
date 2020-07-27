@@ -1,0 +1,57 @@
+1.
+sed -f file1 file2
+2.
+(i)sed '1,100s/gum/drum/' flename
+(ii)sed -e 's/apple/pointer/g' -e 's/mango/apple/g' -e 's/pointer/mango/g'
+(iii)sed -n 5p file| sed ':a; s/ [[:digit:]]\+ / /1g; ta' file
+3.
+sed -n 's/\(.[[:digit:]]*\)\([[:digit:]]\{2\}\)\([[:digit:]]\{3\}$\)/\1,\2,\3/p' filename
+4.
+sed 's/\([^:]*\).*/\1/' /etc/passwd
+5.
+(i)sed -e '1d' -e '$d' filename
+(ii)sed -e '1w output.txt' -e '$w output.txt' input.txt
+6.
+(i) awk -F " " 'NR>=2{print $3" "$4" "$5}' input.txt
+(ii) awk -F " " 'NR>=2&&NF<5{print $1}' input.txt
+7.
+awk -F " " 'NR>=2{
+sum=$3+$4+$5
+average=sum/(NF-2)
+if(average>90)
+grade="A"
+else if(average>79.5&&average<=90)
+grade="B"
+else if(average>70&&average<=79.5)
+grade="C"
+else
+grade="D"
+printf "%s %s %f %s %s",$1," average: ",average,"grade: ",grade
+printf "\n"}' input.txt
+8.
+awk '{ORS=NR%3?,:n};1' f
+9.
+awk 'BEGIN { for(i=1;i<=6;i++) if(i!=5) print i; }'
+10.
+awk '{print "Number of fields in line number "NR" is "NF}' input.txt
+11.
+cat q11.file|tr ";" " "|cut --complement -d " " -f 2
+12.
+cut -d ":" -f 1,6,7 testfile.txt --output-delimiter='#'    (/* question 18 is also same. */) 
+13.
+cat file |tr -s [:space:] ' ' | tr -d a 
+14.
+./scripts/14.sh
+15.
+./scripts/15.sh
+16.
+./scripts/16.sh
+17.
+./scripts/17.sh
+18.
+cut -d ":" -f 1,6,7 testfile.txt --output-delimiter='#'    (/* question 12 is also same. */)
+19 sed /^$/p file
+20
+(i) sed -ne '1'p -ne '$'p file
+(ii) sed /unix/d file
+21 sed -n '2,' file| sed s/linux/unix/| grep -w os
