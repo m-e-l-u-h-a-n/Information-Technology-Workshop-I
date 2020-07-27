@@ -1,0 +1,36 @@
+
+# 1
+ps -p 1 -o etime
+passwd -S ITW1
+# 2
+./scripts/2.sh
+# 3
+a) bc -q <"absolute file path or name if in same directory"> # file should contain required expressions to be calculated.
+b) seq 1 9
+# 4
+a) processes are child of other processes,pstree
+b)time {process name}
+# 5
+process of console related to dev/console (-t tty)
+# 6
+./scripts/6.sh
+# 7 
+./scripts/7.sh
+# 8
+./scripts/8.sh
+# 9 
+./scripts/9.sh
+# 10
+./scripts/10.sh
+#11
+./scripts/prime.sh
+#12
+./scripts/reverse.sh
+#13
+./scripts/password.sh
+#14
+grep -v '^$' file.txt
+#15
+ls -l /home/$USER | sort -h -k5
+# 16
+./scripts/16.sh
