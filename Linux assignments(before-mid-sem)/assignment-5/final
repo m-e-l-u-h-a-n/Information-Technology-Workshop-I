@@ -1,0 +1,10 @@
+order of files is 
+myhelp.sh,
+submenu.sh,
+file.sh,
+text.sh,
+status.sh,
+help.sh
+
+All files are containeed in scripts folder.
+Means the entry point of this project is myhelp.sh and one sholud start by running myhelp.sh using the command (./myhelp.sh), and then he/she can easily navigate through the project in the desired mannaer in the project.
